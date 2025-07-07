@@ -1,0 +1,1784 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beat to the Kiss - Official Artist Website | Producer & Songwriter</title>
+    <meta name="description" content="Beat to the Kiss - Authentische Musik zwischen Beats und Bitterkeit. Producer, Songwriter und Gründer von Beat to the Kiss Records.">
+    <meta name="keywords" content="Beat to the Kiss, Music Producer, Songwriter, Beat to the Kiss Records, Hip Hop, Music">
+    <meta name="author" content="Beat to the Kiss">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://beattothekiss.com/">
+    <meta property="og:title" content="Beat to the Kiss - Official Artist Website">
+    <meta property="og:description" content="Authentische Musik zwischen Beats und Bitterkeit">
+    <meta property="og:image" content="https://i.ibb.co/X0RyBr7/Hailuo-Image-A-black-and-white-portrait-sh-397569096074506245-1.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://beattothekiss.com/">
+    <meta property="twitter:title" content="Beat to the Kiss - Official Artist Website">
+    <meta property="twitter:description" content="Authentische Musik zwischen Beats und Bitterkeit">
+    <meta property="twitter:image" content="https://i.ibb.co/X0RyBr7/Hailuo-Image-A-black-and-white-portrait-sh-397569096074506245-1.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎵</text></svg>">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        /* ==================== RESET & BASE STYLES ==================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-red: #ff4444;
+            --dark-red: #cc2222;
+            --light-red: #ff6666;
+            --black: #000000;
+            --dark-gray: #111111;
+            --medium-gray: #222222;
+            --light-gray: #333333;
+            --white: #ffffff;
+            --text-gray: #cccccc;
+            --text-light: #eeeeee;
+            
+            --font-primary: 'Inter', sans-serif;
+            --font-display: 'Playfair Display', serif;
+            
+            --shadow-small: 0 2px 10px rgba(0, 0, 0, 0.3);
+            --shadow-medium: 0 4px 20px rgba(0, 0, 0, 0.4);
+            --shadow-large: 0 8px 40px rgba(0, 0, 0, 0.5);
+            --shadow-red: 0 4px 20px rgba(255, 68, 68, 0.3);
+            --shadow-red-large: 0 8px 40px rgba(255, 68, 68, 0.4);
+            
+            --transition-fast: 0.2s ease;
+            --transition-medium: 0.3s ease;
+            --transition-slow: 0.5s ease;
+            
+            --border-radius: 12px;
+            --border-radius-large: 20px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+            font-weight: 400;
+        }
+
+        /* ==================== LOADING SCREEN ==================== */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 50%, var(--black) 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            animation: fadeOut 1s ease-out 2s forwards;
+        }
+
+        .loading-content {
+            text-align: center;
+        }
+
+        .loading-logo {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--white), var(--primary-red), var(--white));
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 2s ease-in-out infinite;
+            margin-bottom: 1rem;
+        }
+
+        .loading-text {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .loading-bar {
+            width: 200px;
+            height: 3px;
+            background: var(--medium-gray);
+            margin: 2rem auto 0;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .loading-progress {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-red), var(--light-red));
+            animation: loadProgress 2s ease-out;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes loadProgress {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        /* ==================== NAVIGATION ==================== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 9999;
+            transition: all var(--transition-medium);
+            padding: 1rem 0;
+        }
+
+        .navbar.scrolled {
+            background: rgba(0, 0, 0, 0.95);
+            padding: 0.5rem 0;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        .nav-logo:hover {
+            color: var(--primary-red);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            transition: all var(--transition-fast);
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--white);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-red);
+            transition: width var(--transition-medium);
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        /* ==================== HERO SECTION ==================== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 100px 2rem 50px;
+            background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 50%, var(--black) 100%);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="g"><stop offset="0%" stop-color="%23ffffff" stop-opacity="0.02"/><stop offset="100%" stop-color="%23ffffff" stop-opacity="0"/></radialGradient></defs><circle cx="500" cy="500" r="500" fill="url(%23g)"/></svg>') center/800px;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content {
+            animation: slideInLeft 1s ease-out 0.5s both;
+        }
+
+        .hero-image {
+            position: relative;
+            animation: slideInRight 1s ease-out 0.7s both;
+        }
+
+        .hero-subtitle {
+            font-size: 0.9rem;
+            color: var(--primary-red);
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 1s both;
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--white) 0%, var(--text-light) 50%, var(--primary-red) 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 4s ease-in-out infinite, fadeInUp 1s ease-out 0.8s both;
+        }
+
+        .hero-description {
+            font-size: 1.3rem;
+            color: var(--text-gray);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 1.2s both;
+        }
+
+        .hero-quote {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            padding: 1.5rem;
+            border-left: 4px solid var(--primary-red);
+            background: linear-gradient(90deg, rgba(255, 68, 68, 0.1) 0%, transparent 50%);
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 1.4s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 1.6s both;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            transition: all var(--transition-medium);
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background: var(--primary-red);
+            color: var(--white);
+            border: 2px solid var(--primary-red);
+            box-shadow: var(--shadow-red);
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-red);
+            border-color: var(--dark-red);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-red-large);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--black);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left var(--transition-slow);
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .artist-portrait {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: var(--border-radius-large);
+            box-shadow: var(--shadow-red-large);
+            transition: all var(--transition-medium);
+            filter: brightness(1.1) contrast(1.2) saturate(0.9);
+        }
+
+        .artist-portrait:hover {
+            transform: scale(1.02) rotateZ(1deg);
+            box-shadow: 0 20px 80px rgba(255, 68, 68, 0.6);
+            filter: brightness(1.2) contrast(1.3) saturate(1);
+        }
+
+        /* ==================== ANIMATIONS ==================== */
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ==================== SECTIONS ==================== */
+        .section {
+            padding: 100px 2rem;
+            position: relative;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-subtitle {
+            font-size: 0.9rem;
+            color: var(--primary-red);
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .section-description {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* ==================== ABOUT SECTION ==================== */
+        .about {
+            background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+            margin-top: 4rem;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-gray);
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-quote {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--text-light);
+            margin: 2.5rem 0;
+            padding: 2rem;
+            border-left: 4px solid var(--primary-red);
+            background: linear-gradient(90deg, rgba(255, 68, 68, 0.1) 0%, transparent 70%);
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            position: relative;
+        }
+
+        .about-quote::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            font-size: 4rem;
+            color: var(--primary-red);
+            opacity: 0.3;
+            font-family: var(--font-display);
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all var(--transition-medium);
+        }
+
+        .stat-item:hover {
+            background: rgba(255, 68, 68, 0.1);
+            border-color: var(--primary-red);
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-red);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-portrait {
+            width: 100%;
+            border-radius: var(--border-radius-large);
+            box-shadow: var(--shadow-large);
+            transition: all var(--transition-medium);
+        }
+
+        .about-portrait:hover {
+            transform: scale(1.02);
+            box-shadow: var(--shadow-red-large);
+        }
+
+        /* ==================== MUSIC SECTION ==================== */
+        .music {
+            background: var(--black);
+        }
+
+        .albums-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .album-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius-large);
+            padding: 0;
+            text-align: center;
+            transition: all var(--transition-medium);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .album-cover {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: var(--border-radius-large) var(--border-radius-large) 0 0;
+            transition: all var(--transition-medium);
+            background: linear-gradient(135deg, var(--dark-gray), var(--medium-gray));
+        }
+
+        .album-info {
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .album-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--primary-red), transparent);
+            opacity: 0;
+            transition: opacity var(--transition-medium);
+        }
+
+        .album-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 68, 68, 0.1);
+            border-color: var(--primary-red);
+            box-shadow: var(--shadow-red-large);
+        }
+
+        .album-card:hover .album-cover {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+
+        .album-card:hover::before {
+            opacity: 0.1;
+        }
+
+        .album-card > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .album-title {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .album-year {
+            font-size: 1rem;
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+        }
+
+        .album-type {
+            display: inline-block;
+            background: rgba(255, 68, 68, 0.2);
+            color: var(--primary-red);
+            padding: 0.5rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 1.5rem;
+        }
+
+        .album-description {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        .spotify-player {
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .spotify-embed {
+            max-width: 600px;
+            margin: 0 auto;
+            border-radius: var(--border-radius-large);
+            overflow: hidden;
+            box-shadow: var(--shadow-large);
+        }
+
+        /* ==================== CONTACT SECTION ==================== */
+        .contact {
+            background: linear-gradient(135deg, var(--dark-gray) 0%, var(--black) 100%);
+        }
+
+        .contact-content {
+            display: block;
+            max-width: 800px;
+            margin: 4rem auto 0;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all var(--transition-medium);
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 68, 68, 0.1);
+            border-color: var(--primary-red);
+            transform: translateX(10px);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-red), var(--light-red));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--white);
+            flex-shrink: 0;
+        }
+
+        .contact-details h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+        }
+
+        .contact-details p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 3rem;
+        }
+
+        .social-link {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: all var(--transition-medium);
+        }
+
+        .social-link:hover {
+            background: var(--primary-red);
+            border-color: var(--primary-red);
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: var(--shadow-red);
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+            border-radius: var(--border-radius-large);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-cta {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+            border-radius: var(--border-radius-large);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 3rem;
+        }
+
+        /* ==================== FOOTER ==================== */
+        .footer {
+            background: var(--black);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 3rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .footer-description {
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color var(--transition-fast);
+        }
+
+        .footer-link:hover {
+            color: var(--primary-red);
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        /* ==================== SCROLL PROGRESS ==================== */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-red), var(--light-red));
+            z-index: 10001;
+            transition: width 0.1s ease;
+        }
+
+        /* ==================== BACK TO TOP ==================== */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-red);
+            border: none;
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition-medium);
+            z-index: 1000;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--dark-red);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-red);
+        }
+
+        /* ==================== RESPONSIVE DESIGN ==================== */
+        @media (max-width: 1024px) {
+            .hero-container,
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hero-image {
+                order: -1;
+                text-align: center;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .albums-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.95);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                gap: 0;
+                padding: 2rem;
+                transition: top var(--transition-medium);
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .nav-menu.active {
+                top: 100%;
+            }
+
+            .nav-link {
+                padding: 1rem 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-link:last-child {
+                border-bottom: none;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .section {
+                padding: 50px 1rem;
+            }
+
+            .hero {
+                padding: 120px 1rem 50px;
+            }
+
+            .hero-container {
+                gap: 2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .albums-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .album-cover {
+                height: 200px;
+            }
+
+            .album-info {
+                padding: 1.5rem;
+            }
+
+            .social-links {
+                gap: 1rem;
+            }
+
+            .social-link {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .album-card {
+                padding: 2rem;
+            }
+
+            .contact-item {
+                padding: 1rem;
+            }
+        }
+
+        /* ==================== UTILITY CLASSES ==================== */
+        .fadeIn {
+            animation: fadeInUp 0.8s ease-out both;
+        }
+
+        .slideInLeft {
+            animation: slideInLeft 0.8s ease-out both;
+        }
+
+        .slideInRight {
+            animation: slideInRight 0.8s ease-out both;
+        }
+
+        /* ==================== ACCESSIBILITY ==================== */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            
+            .scroll-progress {
+                display: none;
+            }
+        }
+
+        @media (prefers-contrast: high) {
+            :root {
+                --primary-red: #ff0000;
+                --white: #ffffff;
+                --black: #000000;
+            }
+        }
+
+        /* ==================== FOCUS STYLES ==================== */
+        .btn:focus,
+        .nav-link:focus,
+        .social-link:focus,
+        .mobile-menu-toggle:focus {
+            outline: 2px solid var(--primary-red);
+            outline-offset: 2px;
+        }
+
+        /* ==================== SELECTION STYLES ==================== */
+        ::selection {
+            background: var(--primary-red);
+            color: var(--white);
+        }
+
+        ::-moz-selection {
+            background: var(--primary-red);
+            color: var(--white);
+        }
+
+        /* ==================== SCROLLBAR STYLES ==================== */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--black);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-red);
+            border-radius: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--dark-red);
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">BEAT TO THE KISS</div>
+            <div class="loading-text">Loading Experience</div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">BEAT TO THE KISS</a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#music" class="nav-link">Music</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-subtitle">Music Producer & Songwriter</div>
+                <h1 class="hero-title">BEAT TO THE KISS</h1>
+                <p class="hero-description">Authentische Musik zwischen Beats und Bitterkeit. Erschaffe Klangwelten, die Geschichten erzählen.</p>
+                <div class="hero-quote">
+                    "I'm not here to please - I'm here to tell. Between beats and bitterness, between road and soul. Music is my outlet."
+                </div>
+                <div class="hero-buttons">
+                    <a href="https://open.spotify.com/intl-de/artist/6hC138hN2HuSbZqIwkyJRe" target="_blank" rel="noopener" class="btn btn-primary">
+                        <i class="fab fa-spotify"></i>
+                        Auf Spotify hören
+                    </a>
+                    <a href="#music" class="btn btn-secondary">
+                        <i class="fas fa-music"></i>
+                        Meine Musik entdecken
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://i.ibb.co/X0RyBr7/Hailuo-Image-A-black-and-white-portrait-sh-397569096074506245-1.png" alt="Beat to the Kiss - Artist Portrait" class="artist-portrait">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-subtitle">Über den Künstler</div>
+                <h2 class="section-title">Authentizität durch Musik</h2>
+                <p class="section-description">
+                    Von düsteren Melodien bis kraftvollen Beats - jeder Track erzählt eine authentische Geschichte aus dem Leben zwischen Road und Soul.
+                </p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Als Gründer von <strong>Beat to the Kiss Records</strong> setze ich künstlerische Visionen um und bringe authentische Geschichten zum Leben. Meine Musik navigiert zwischen Beats und Bitterkeit, zwischen dem harten Alltag und der Seele des Künstlers.</p>
+                    
+                    <p>Jeder Track ist mehr als nur Sound - er ist ein Statement. Ein Ausdruck dessen, was sich nicht in Worte fassen lässt, aber in Melodien und Rhythmen seine Wahrheit findet.</p>
+                    
+                    <div class="about-quote">
+                        Music is my outlet. The rest? You don't have to know.
+                    </div>
+                    
+                    <p>Mit <strong>Beat to the Kiss Records</strong> erschaffe ich eine Plattform für authentische Musik, die nicht gefällt, sondern erzählt. Eine Musik, die polarisiert, bewegt und vor allem: die wahr ist.</p>
+                </div>
+                
+                <div class="about-image">
+                    <img src="https://i.ibb.co/X0RyBr7/Hailuo-Image-A-black-and-white-portrait-sh-397569096074506245-1.png" alt="Beat to the Kiss Studio Portrait" class="about-portrait">
+                </div>
+            </div>
+            
+            <div class="about-stats">
+                <div class="stat-item">
+                    <div class="stat-number">2025</div>
+                    <div class="stat-label">Label gegründet</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Aktuelle Alben</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">Geschichten zu erzählen</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Music Section -->
+    <section id="music" class="section music">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-subtitle">Diskografie</div>
+                <h2 class="section-title">Meine Musik</h2>
+                <p class="section-description">
+                    Eine Sammlung authentischer Geschichten, erzählt durch Beats, Melodien und ehrliche Texte. Jedes Album eine Reise zwischen Licht und Schatten.
+                </p>
+            </div>
+            
+            <div class="albums-grid">
+                <div class="album-card" onclick="window.open('https://open.spotify.com/intl-de/artist/6hC138hN2HuSbZqIwkyJRe', '_blank')">
+                    <img src="https://i.ibb.co/prs8ZbhP/square-album-cover-with-a-solid-dark-con-Kftg999-PS2-SRI0iz31o-NVQ-ye-RNU6-Of-S7-W2p-Yhd-qt-VQ.png" alt="RISE ABOVE Album Cover" class="album-cover">
+                    <div class="album-info">
+                        <h3 class="album-title">RISE ABOVE</h3>
+                        <div class="album-year">2025</div>
+                        <div class="album-type">Latest Release • Album</div>
+                        <p class="album-description">
+                            Ein kraftvolles Statement über das Überwinden von Hindernissen und das Streben nach etwas Größerem. Düstere Beats treffen auf hoffnungsvolle Melodien.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="album-card" onclick="window.open('https://open.spotify.com/intl-de/artist/6hC138hN2HuSbZqIwkyJRe', '_blank')">
+                    <img src="https://i.ibb.co/C31fPZqs/a-square-album-cover-for-the-artist-beat-c-Yjb-DOLe-Rdaui5sbxg-WLGg-NIU4dapd-SNOVgzvy-XWkqr-Q.png" alt="OFFLINE Album Cover" class="album-cover">
+                    <div class="album-info">
+                        <h3 class="album-title">OFFLINE</h3>
+                        <div class="album-year">2025</div>
+                        <div class="album-type">Album</div>
+                        <p class="album-description">
+                            Eine Reise in die Stille, weg von der digitalen Welt. Introspektive Tracks, die zum Nachdenken anregen und die Schönheit der Disconnection feiern.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="album-card" onclick="window.open('https://open.spotify.com/intl-de/artist/6hC138hN2HuSbZqIwkyJRe', '_blank')">
+                    <img src="https://i.ibb.co/jZyK0H48/a-square-music-cover-with-powerful-simpl-Qb-XWM30c-Qgmfory-Dm-Cz-UA-whl-IIg7t-Sa629k-B6w1-K8-HA.png" alt="Rose in the Dark Album Cover" class="album-cover">
+                    <div class="album-info">
+                        <h3 class="album-title">Rose in the Dark</h3>
+                        <div class="album-year">2025</div>
+                        <div class="album-type">Album</div>
+                        <p class="album-description">
+                            Schönheit in der Dunkelheit finden. Ein emotionales Album über Kontraste, Hoffnung und die Kraft, die in schweren Zeiten entsteht.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="album-card" onclick="window.open('https://open.spotify.com/intl-de/artist/6hC138hN2HuSbZqIwkyJRe', '_blank')">
+                    <img src="https://i.ibb.co/v4TLj6V0/a-romantic-spotify-album-cover-for-the-s-Ad9-OCg4-GSk-rvvmrzy-tb-Q-M9yfjgn-HSva0-Lp7-Siilxbw.png" alt="Sommer Vibe Album Cover" class="album-cover">
+                    <div class="album-info">
+                        <h3 class="album-title">Sommer Vibe</h3>
+                        <div class="album-year">2025</div>
+                        <div class="album-type">Album</div>
+                        <p class="album-description">
+                            Leichtere Töne treffen auf sommerliche Beats. Ein Album, das zeigt, dass auch in düsteren Zeiten Platz für Hoffnung und positive Energie ist.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="spotify-player">
+                <h3 style="margin-bottom: 2rem; color: var(--white); font-family: var(--font-display);">Hör dir meine neuesten Tracks an</h3>
+                <div class="spotify-embed">
+                    <iframe 
+                        style="border-radius:12px" 
+                        src="https://open.spotify.com/embed/artist/6hC138hN2HuSbZqIwkyJRe?utm_source=generator&theme=0" 
+                        width="100%" 
+                        height="352" 
+                        frameBorder="0" 
+                        allowfullscreen="" 
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-subtitle">Kontakt</div>
+                <h2 class="section-title">Lass uns zusammenarbeiten</h2>
+                <p class="section-description">
+                    Für Bookings, Kollaborationen oder Beat to the Kiss Records Anfragen. Ich freue mich auf deine Nachricht.
+                </p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Direkte E-Mail</h4>
+                            <p><a href="mailto:belkis.aslani@gmail.com" style="color: var(--primary-red); text-decoration: none;">belkis.aslani@gmail.com</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Beat to the Kiss Records</h4>
+                            <p>Dein Label für authentische Musik</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Studio Sessions</h4>
+                            <p>Professionelle Aufnahmen & Produktionen</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Kollaborationen</h4>
+                            <p>Gemeinsame Projekte & Features</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-calendar"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Bookings</h4>
+                            <p>Live-Auftritte & Events</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-cta">
+                    <h3 style="margin-bottom: 1.5rem; color: var(--white); font-family: var(--font-display); text-align: center;">Schreib mir direkt eine E-Mail</h3>
+                    <div style="text-align: center; margin-bottom: 2rem;">
+                        <a href="mailto:belkis.aslani@gmail.com?subject=Beat%20to%20the%20Kiss%20-%20Anfrage" class="btn btn-primary" style="font-size: 1.1rem; padding: 1.2rem 2.5rem;">
+                            <i class="fas fa-paper-plane"></i>
+                            E-Mail schreiben
+                        </a>
+                    </div>
+                    <p style="text-align: center; color: var(--text-gray); font-size: 0.95rem;">
+                        Für Bookings, Kollaborationen oder Beat to the Kiss Records Anfragen - ich freue mich auf deine Nachricht!
+                    </p>
+                </div>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://open.spotify.com/intl-de/artist/6hC138hN2HuSbZqIwkyJRe" target="_blank" rel="noopener" class="social-link" aria-label="Spotify">
+                    <i class="fab fa-spotify"></i>
+                </a>
+                <a href="https://youtube.com/channel/UCmtLAybFRRt0Nu7grYjJy2Q" target="_blank" rel="noopener" class="social-link" aria-label="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">BEAT TO THE KISS</div>
+            <div class="footer-description">"Authenticity through music"</div>
+            
+            <div class="footer-links">
+                <a href="#home" class="footer-link">Home</a>
+                <a href="#about" class="footer-link">About</a>
+                <a href="#music" class="footer-link">Music</a>
+                <a href="#contact" class="footer-link">Contact</a>
+                <a href="https://open.spotify.com/intl-de/artist/6hC138hN2HuSbZqIwkyJRe" target="_blank" rel="noopener" class="footer-link">Spotify</a>
+                <a href="https://youtube.com/channel/UCmtLAybFRRt0Nu7grYjJy2Q" target="_blank" rel="noopener" class="footer-link">YouTube</a>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Beat to the Kiss Records. All rights reserved.</p>
+                <p>Music is my outlet. The rest? You don't have to know.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // ==================== LOADING SCREEN ====================
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const loadingScreen = document.querySelector('.loading-screen');
+                loadingScreen.style.opacity = '0';
+                setTimeout(function() {
+                    loadingScreen.style.display = 'none';
+                }, 500);
+            }, 2000);
+        });
+
+        // ==================== NAVIGATION ====================
+        const navbar = document.getElementById('navbar');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        // Scroll effect for navbar
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        mobileMenuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            const icon = this.querySelector('i');
+            
+            if (navMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+                const icon = mobileMenuToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+        // Active navigation link
+        function setActiveNavLink() {
+            const sections = document.querySelectorAll('section[id]');
+            const scrollPosition = window.scrollY + 100;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }
+
+        window.addEventListener('scroll', setActiveNavLink);
+
+        // ==================== SMOOTH SCROLLING ====================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                
+                if (target) {
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // ==================== SCROLL PROGRESS ====================
+        const scrollProgress = document.querySelector('.scroll-progress');
+
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.scrollY;
+            const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercentage = (scrollTop / documentHeight) * 100;
+            
+            scrollProgress.style.width = scrollPercentage + '%';
+        });
+
+        // ==================== BACK TO TOP BUTTON ====================
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // ==================== INTERSECTION OBSERVER ====================
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fadeIn');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animations
+        document.querySelectorAll('.album-card, .stat-item, .contact-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // ==================== FORM HANDLING ====================
+        // Removed - Direct email contact instead
+
+        // ==================== PERFORMANCE OPTIMIZATIONS ====================
+        
+        // Lazy loading for images
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.removeAttribute('data-src');
+                            imageObserver.unobserve(img);
+                        }
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+
+        // Throttle scroll events
+        let isScrolling = false;
+
+        function handleScroll() {
+            if (!isScrolling) {
+                window.requestAnimationFrame(function() {
+                    // Your scroll handling code here
+                    isScrolling = false;
+                });
+                isScrolling = true;
+            }
+        }
+
+        window.addEventListener('scroll', handleScroll);
+
+        // ==================== ACCESSIBILITY ENHANCEMENTS ====================
+        
+        // Keyboard navigation for mobile menu
+        mobileMenuToggle.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                this.click();
+            }
+        });
+
+        // Skip to main content link
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Tab' && !e.shiftKey && document.activeElement === document.body) {
+                const firstFocusable = document.querySelector('a, button, input, textarea, select');
+                if (firstFocusable) {
+                    firstFocusable.focus();
+                }
+            }
+        });
+
+        // ==================== ENHANCED INTERACTIONS ====================
+        
+        // Album card click animation
+        document.querySelectorAll('.album-card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+            });
+        });
+
+        // Social link hover effects
+        document.querySelectorAll('.social-link').forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.1) rotateZ(5deg)';
+            });
+            
+            link.addEventListener('mouseleave', function() {
+                this.style.transform = '';
+            });
+        });
+
+        // Button click effects
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                const ripple = document.createElement('div');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.cssText = `
+                    position: absolute;
+                    width: ${size}px;
+                    height: ${size}px;
+                    left: ${x}px;
+                    top: ${y}px;
+                    background: rgba(255, 255, 255, 0.3);
+                    border-radius: 50%;
+                    transform: scale(0);
+                    animation: ripple 0.6s linear;
+                    pointer-events: none;
+                `;
+                
+                this.style.position = 'relative';
+                this.style.overflow = 'hidden';
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+
+        // CSS for ripple animation
+        const rippleCSS = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        
+        const style = document.createElement('style');
+        style.textContent = rippleCSS;
+        document.head.appendChild(style);
+
+        // ==================== EASTER EGGS ====================
+        
+        // Konami code easter egg
+        let konamiCode = [];
+        const konamiSequence = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]; // Up Up Down Down Left Right Left Right B A
+
+        document.addEventListener('keydown', function(e) {
+            konamiCode.push(e.keyCode);
+            
+            if (konamiCode.length > konamiSequence.length) {
+                konamiCode.shift();
+            }
+            
+            if (JSON.stringify(konamiCode) === JSON.stringify(konamiSequence)) {
+                // Easter egg activation
+                document.body.style.animation = 'rainbow 2s infinite';
+                setTimeout(() => {
+                    document.body.style.animation = '';
+                }, 5000);
+                
+                // Show secret message
+                const message = document.createElement('div');
+                message.textContent = '🎵 Beat to the Kiss - Hidden Track Unlocked! 🎵';
+                message.style.cssText = `
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: linear-gradient(45deg, #ff4444, #ff6666);
+                    color: white;
+                    padding: 2rem;
+                    border-radius: 12px;
+                    font-family: var(--font-display);
+                    font-size: 1.5rem;
+                    z-index: 10002;
+                    animation: fadeInUp 0.5s ease-out;
+                `;
+                
+                document.body.appendChild(message);
+                
+                setTimeout(() => {
+                    message.remove();
+                }, 3000);
+                
+                konamiCode = [];
+            }
+        });
+
+        // Rainbow animation CSS
+        const rainbowCSS = `
+            @keyframes rainbow {
+                0% { filter: hue-rotate(0deg); }
+                100% { filter: hue-rotate(360deg); }
+            }
+        `;
+        
+        const rainbowStyle = document.createElement('style');
+        rainbowStyle.textContent = rainbowCSS;
+        document.head.appendChild(rainbowStyle);
+
+        // ==================== INITIALIZATION ====================
+        
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set initial active nav link
+            setActiveNavLink();
+            
+            // Preload critical images
+            const criticalImages = [
+                'https://i.ibb.co/X0RyBr7/Hailuo-Image-A-black-and-white-portrait-sh-397569096074506245-1.png'
+            ];
+            
+            criticalImages.forEach(src => {
+                const img = new Image();
+                img.src = src;
+            });
+            
+            // Add loaded class to body for CSS hooks
+            document.body.classList.add('loaded');
+        });
+
+        // ==================== ERROR HANDLING ====================
+        
+        window.addEventListener('error', function(e) {
+            console.error('JavaScript Error:', e.error);
+            // Could implement error reporting here
+        });
+
+        // Handle unhandled promise rejections
+        window.addEventListener('unhandledrejection', function(e) {
+            console.error('Unhandled Promise Rejection:', e.reason);
+            e.preventDefault();
+        });
+    </script>
+</body>
+</html>
